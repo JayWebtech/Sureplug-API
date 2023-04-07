@@ -1,0 +1,120 @@
+GET http://localhost:3000/users/getusers
+Content-type: application/json
+
+#########################################3
+
+GET http://localhost:3000/users/single/642e82e5e0fc6d546bee22534
+
+
+##############################################
+
+POST http://localhost:3000/users/register
+Content-type: application/json
+
+{
+    "name": "Samuel John",
+    "email": "jethyjay0ko@gmail.com",
+    "password": "123456",
+    "address": "No. 354 U/Zawu, Gonin Gora",
+    "gsm": "08084348318",
+    "state": "Kaduna",
+    "lga": "Chikun",
+    "skill": "Shoe Making",
+    "businessName": "Jedi Shoes"
+}
+
+
+##############################################
+
+POST http://localhost:3000/users/login
+Content-type: application/json
+
+{
+    "email": "jethyjay@gmail.com",
+    "password": "123456"
+}
+
+
+##############################################
+
+PATCH  http://localhost:3000/users/update/642e82e5e0fc6da5bce22534
+Content-type: application/json
+
+{
+    "address": "Kawo"
+}
+
+##############################################
+
+PATCH http://localhost:3000/users/status/642e82e5e0fc6da5bce22534
+
+
+##############################################
+
+DELETE http://localhost:3000/users/delete/642ec53e2f739a034041da9a
+
+
+
+##############################################
+
+POST http://localhost:3000/admin/create
+Content-type: application/json
+
+{
+    "username": "admin",
+    "password": "admin" 
+}
+
+##############################################
+
+POST http://localhost:3000/admin/login
+Content-type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+##############################################
+
+POST http://localhost:3000/admin/create-skills
+Content-type: application/json
+
+{
+    "name": "Electrician"
+}
+
+##############################################
+
+GET http://localhost:3000/admin/getskills
+Content-type: application/json
+
+##############################################
+
+PATCH http://localhost:3000/admin/updateskill/642ff507730240efa62071ca
+Content-type: application/json
+
+{
+    "name": "Makeup Artist"
+}
+
+##########################
+
+POST http://localhost:3000/admin/search
+Content-type: application/json
+
+{
+    "skill": "Shoe Making",
+    "state": "Kaduna"
+}
+
+
+##########################
+
+GET http://localhost:3000/admin/getsearch
+Content-type: application/json
+
+
+
+
+
