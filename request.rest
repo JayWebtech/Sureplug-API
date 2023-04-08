@@ -1,32 +1,35 @@
-GET http://localhost:3000/users/getusers
+GET https://sureplugapi.onrender.com/users/getusers
 Content-type: application/json
 
-#########################################3
+#########################################
+https://sureplugapi.onrender.com/users/getusers
+#######################
 
-GET http://localhost:3000/users/single/642e82e5e0fc6d546bee22534
+GET https://sureplugapi.onrender.com/users/single/642e82e5e0fc6d546bee22534
 
 
 ##############################################
 
-POST http://localhost:3000/users/register
+POST https://sureplugapi.onrender.com/users/register
 Content-type: application/json
 
 {
     "name": "Samuel John",
     "email": "jethyjay0ko@gmail.com",
-    "password": "123456",
     "address": "No. 354 U/Zawu, Gonin Gora",
     "gsm": "08084348318",
     "state": "Kaduna",
     "lga": "Chikun",
     "skill": "Shoe Making",
-    "businessName": "Jedi Shoes"
+    "businessName": "Jedi Shoes",
+    "link": "jay.com",
+    "images": "link"
 }
 
 
 ##############################################
 
-POST http://localhost:3000/users/login
+POST https://sureplugapi.onrender.com/users/login
 Content-type: application/json
 
 {
@@ -37,7 +40,7 @@ Content-type: application/json
 
 ##############################################
 
-PATCH  http://localhost:3000/users/update/642e82e5e0fc6da5bce22534
+PATCH  https://sureplugapi.onrender.com/users/update/642e82e5e0fc6da5bce22534
 Content-type: application/json
 
 {
@@ -46,18 +49,18 @@ Content-type: application/json
 
 ##############################################
 
-PATCH http://localhost:3000/users/status/642e82e5e0fc6da5bce22534
+PATCH https://sureplugapi.onrender.com/users/status/642e82e5e0fc6da5bce22534
 
 
 ##############################################
 
-DELETE http://localhost:3000/users/delete/642ec53e2f739a034041da9a
+DELETE https://sureplugapi.onrender.com/users/delete/642ec53e2f739a034041da9a
 
 
 
 ##############################################
 
-POST http://localhost:3000/admin/create
+POST https://sureplugapi.onrender.com/admin/create
 Content-type: application/json
 
 {
@@ -67,7 +70,7 @@ Content-type: application/json
 
 ##############################################
 
-POST http://localhost:3000/admin/login
+POST https://sureplugapi.onrender.com/admin/login
 Content-type: application/json
 
 {
@@ -77,30 +80,30 @@ Content-type: application/json
 
 ##############################################
 
-POST http://localhost:3000/admin/create-skills
+POST https://sureplugapi.onrender.com/admin/create-skills
+Content-type: application/json
+
+{
+    "name": "Barber"
+}
+
+##############################################
+
+GET https://sureplugapi.onrender.com/admin/getskills
+Content-type: application/json
+
+##############################################
+
+PATCH https://sureplugapi.onrender.com/admin/updateskill/64316d4cf86751f6adfa068a
 Content-type: application/json
 
 {
     "name": "Electrician"
 }
 
-##############################################
-
-GET http://localhost:3000/admin/getskills
-Content-type: application/json
-
-##############################################
-
-PATCH http://localhost:3000/admin/updateskill/642ff507730240efa62071ca
-Content-type: application/json
-
-{
-    "name": "Makeup Artist"
-}
-
 ##########################
 
-POST http://localhost:3000/admin/search
+POST https://sureplugapi.onrender.com/admin/search
 Content-type: application/json
 
 {
@@ -111,7 +114,7 @@ Content-type: application/json
 
 ##########################
 
-GET http://localhost:3000/admin/getsearch
+GET https://sureplugapi.onrender.com/admin/getsearch
 Content-type: application/json
 
 

@@ -9,9 +9,9 @@ const usersSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  password: {
+  link: {
     type: String,
-    required: true
+    required: false
   },
   address: {
     type: String,
@@ -41,9 +41,9 @@ const usersSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  logo: {
+  images: {
     type: String,
-    required: true
+    required: false
   },
   emailStatus: {
     type: String,

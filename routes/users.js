@@ -20,13 +20,12 @@ router.get('/single/:id', getUser, (req, res) => {
 
 // Creating account
 router.post('/register', async (req, res) => {
-  var hash = crypto.createHash('md5').update(req.body.password).digest('hex');
   var email = req.body.email
   var gsm = req.body.gsm
   const user = new usersSchema({
     name: req.body.name,
     email: req.body.email,
-    password: hash,
+    link: link,
     address: req.body.address,
     gsm: req.body.gsm,
     state: req.body.state,
@@ -34,7 +33,7 @@ router.post('/register', async (req, res) => {
     skill: req.body.skill,
     businessName: req.body.businessName,
     status: 'FALSE',
-    logo: 'FALSE',
+    images: 'FALSE',
     emailStatus: 'FALSE',
     gsmStatus: 'FALSE',
   })
@@ -54,31 +53,31 @@ router.post('/register', async (req, res) => {
   }
 })
 
-// Login into account
-router.post('/login', async (req, res) => {
-  var password = crypto.createHash('md5').update(req.body.password).digest('hex');
-  var email = req.body.email
-  try {
-    const loginAuth = await usersSchema.find({email, password}).lean()
-      if(loginAuth.length>0){
-        usersSchema.findOne({ email, password }).lean()
-        .then((result) =>{ 
-            if(result.emailStatus=="FALSE"){
-              res.status(409).json({message:"Please verify your email address"})
-            }else{
-              res.status(200).json(result)
-            } 
-        })
-        .catch((err) => {
-          console.log(err)
-        }) 
-      }else{
-        res.status(404).json({message:"Wrong login credentials"})
-      }
-    } catch (err) {
-      res.status(400).json({ message:err.message })
-    }
-})
+// // Login into account
+// router.post('/login', async (req, res) => {
+//   var password = crypto.createHash('md5').update(req.body.password).digest('hex');
+//   var email = req.body.email
+//   try {
+//     const loginAuth = await usersSchema.find({email, password}).lean()
+//       if(loginAuth.length>0){
+//         usersSchema.findOne({ email, password }).lean()
+//         .then((result) =>{ 
+//             if(result.emailStatus=="FALSE"){
+//               res.status(409).json({message:"Please verify your email address"})
+//             }else{
+//               res.status(200).json(result)
+//             } 
+//         })
+//         .catch((err) => {
+//           console.log(err)
+//         }) 
+//       }else{
+//         res.status(404).json({message:"Wrong login credentials"})
+//       }
+//     } catch (err) {
+//       res.status(400).json({ message:err.message })
+//     }
+// })
 
 // Updating user
 router.patch('/update/:id', getUser, async (req, res) => {
@@ -93,6 +92,9 @@ router.patch('/update/:id', getUser, async (req, res) => {
   }
   if (req.body.lga != null) {
     res.user.lga = req.body.lga
+  }
+  if (req.body.link != null) {
+    res.user.link = req.body.link
   }
   try {
     const updatedUser = await res.user.save()
