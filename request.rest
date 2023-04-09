@@ -15,9 +15,9 @@ Content-type: application/json
 
 {
     "name": "Samuel John",
-    "email": "jethyjay0ko@gmail.com",
+    "email": "jethyjay330ko@gmail.com",
     "address": "No. 354 U/Zawu, Gonin Gora",
-    "gsm": "08084348318",
+    "gsm": "08084343318",
     "state": "Kaduna",
     "lga": "Chikun",
     "skill": "Shoe Making",

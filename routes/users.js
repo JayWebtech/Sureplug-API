@@ -25,7 +25,7 @@ router.post('/register', async (req, res) => {
   const user = new usersSchema({
     name: req.body.name,
     email: req.body.email,
-    link: link,
+    link: req.body.link,
     address: req.body.address,
     gsm: req.body.gsm,
     state: req.body.state,
