@@ -45,14 +45,6 @@ const usersSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  emailStatus: {
-    type: String,
-    required: true
-  },
-  gsmStatus: {
-    type: String,
-    required: true
-  },
   registerDate: {
     type: Date,
     required: true,

@@ -33,9 +33,7 @@ router.post('/register', async (req, res) => {
     skill: req.body.skill,
     businessName: req.body.businessName,
     status: 'FALSE',
-    images: 'FALSE',
-    emailStatus: 'FALSE',
-    gsmStatus: 'FALSE',
+    images: req.body.images
   })
   try {
     const emailAuth = await usersSchema.findOne({email}).lean()
